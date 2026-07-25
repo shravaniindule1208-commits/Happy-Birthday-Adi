@@ -175,24 +175,47 @@ border-radius:45%;
 animation:waveMove 12s linear infinite;
 }
 
-.wave1{
-bottom:0;
-opacity:.5;
+.ocean{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    line-height:0;
 }
 
-.wave2{
-bottom:15px;
-opacity:.3;
-animation-duration:18s;
+.wave{
+    display:block;
+    width:200%;
+    height:120px;
 }
 
-.wave3{
-bottom:30px;
-opacity:.2;
-animation-duration:24s;
+.wave-back{
+    animation:drift 18s linear infinite;
 }
 
-@keyframes waveMove{
+.wave-front{
+    margin-top:-90px;
+    animation:driftReverse 12s linear infinite;
+}
+
+@keyframes drift{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+@keyframes driftReverse{
+    from{
+        transform:translateX(-50%);
+    }
+    to{
+        transform:translateX(0);
+    }
+}
 0%{
 transform:translateX(0);
 }
